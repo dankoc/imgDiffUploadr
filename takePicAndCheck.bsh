@@ -1,0 +1,31 @@
+WORKDIR=/home/dankoc/Pictures
+OLDP=oldPicture.jpeg
+PUZDIF=/home/dankoc/Downloads/libpuzzle-0.11/src/puzzle-diff
+TOK=`cat ~/.flickrrc/token`
+
+while true;
+do
+  RAND=test-$RANDOM.jpeg
+
+  ## Takes a picture.
+  streamer -s 640x480 -o $WORKDIR/$RAND 
+
+  ## Compares it to 'oldPicture.jpg'.
+  $PUZDIF -e -E 0.4 $WORKDIR/$RAND $WORKDIR/$OLDP 
+  ANS=$?
+
+  ## If DIFFERENT ... 
+  if [ $ANS -eq 10 ]; then
+    echo "SAME"
+  elif [ $ANS -eq 20 ]; then
+    echo "DIFF"
+    flickr_upload --tag='HOMEFRONT' --auth_token $TOK $WORKDIR/$RAND
+  fi
+
+  ## Replace 'oldPicture.jpg'
+  cp $WORKDIR/$RAND $WORKDIR/$OLDP
+  rm $WORKDIR/$RAND
+
+  ## sleep...
+  sleep 5
+done
