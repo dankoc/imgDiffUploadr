@@ -8,7 +8,7 @@ do
   RAND=test-$RANDOM.jpeg
 
   ## Takes a picture.
-  streamer -s 640x480 -o $WORKDIR/$RAND 
+  streamer -s 1280x720 -o $WORKDIR/$RAND 
 
   ## Compares it to 'oldPicture.jpg'.
   $PUZDIF -e -E 0.4 $WORKDIR/$RAND $WORKDIR/$OLDP 
