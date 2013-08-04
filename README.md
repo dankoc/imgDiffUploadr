@@ -50,7 +50,15 @@ Simply:
     sudo apt-get install libflickr-upload-perl
     
 
-Set up auth token for Flickr authentication.
+Now set up auth token for Flickr authentication.  Run:
+
+    flickr_upload --auth
+
+Then: 
+ * Paste the URL into a web browser and follow the instructions that appear.  
+ * Paste the authentication token into ~/.flickrrc/token.
+ * Then run: bash checkFlickrToken.bsh
+ * If you see XML indicating that you have write permission, it's done!
 
 
 
