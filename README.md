@@ -42,4 +42,17 @@ Simply:
 
     sudo apt-get install streamer
 
+Install libflickr
+-----------------
+
+Simply:
+
+    sudo apt-get install libflickr-upload-perl
+    
+
+Set up auth token for Flickr authentication.
+
+
+
+
 
