@@ -15,11 +15,11 @@ Libpuzzle hadn't been updated in some time ... perhaps because of this, the conf
 
 Install libgd2
 
-  sudo apt-get install libgd2-xpm-dev
+    sudo apt-get install libgd2-xpm-dev
 
 Clone libpuzzle library on github: 
 
-  git clone http://github.com/jedisct1/libpuzzle.git
+    git clone http://github.com/jedisct1/libpuzzle.git
 
 Then came the hackery ... 
  * run autoconf
@@ -32,14 +32,14 @@ Then came the hackery ...
  * Copied config.h to src/.
  
 Rather than try to debug the Makefiles, I ended up compiling puzzle-diff directly using: 
-
-  cc puzzle-diff.c puzzle.c cvec.c dvec.c tunables.c vector_ops.c -lm -lgd -o puzzle-diff
+    
+    cc puzzle-diff.c puzzle.c cvec.c dvec.c tunables.c vector_ops.c -lm -lgd -o puzzle-diff
 
 Install streamer
 ----------------
 
 Simply: 
 
-  sudo apt-get install streamer
+    sudo apt-get install streamer
 
 
