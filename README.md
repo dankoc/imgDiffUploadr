@@ -28,7 +28,7 @@ Then came the hackery ...
  * Rename (or copy) lots Makefile.am to Makefile.in in most of the subdirectories.
  * Finally, ./configure finished without error.
  * Try make, or make puzzle-diff.  Didn't work for me.
- * Added #include <math.h>; and #include <gd.h> lines in dvec.c.
+ * Added #include \<math.h\>; and #include \<gd.h\> lines in dvec.c.
  * Copied config.h to src/.
  
 Rather than try to debug the Makefiles, I ended up compiling puzzle-diff directly using: 
