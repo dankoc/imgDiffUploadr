@@ -1,0 +1,33 @@
+WORKDIR=~/Pictures
+DROPBOX=~/Dropbox/AdamReturn
+OLDP=oldPicture.jpeg
+PUZDIF=puzzle-diff
+TIME=1
+THRESHOLD=0.4
+
+while true;
+do
+  RAND=test-$RANDOM.jpeg
+
+  ## Takes a picture.
+  streamer -s 1280x720 -o $WORKDIR/$RAND 
+
+  ## Compares it to 'oldPicture.jpg'.
+  $PUZDIF -e -E $THRESHOLD $WORKDIR/$RAND $WORKDIR/$OLDP 
+  ANS=$?
+
+  ## If DIFFERENT ... 
+  if [ $ANS -eq 10 ]; then
+    echo "SAME"
+  elif [ $ANS -eq 20 ]; then
+    echo "DIFF"
+    cp $WORKDIR/$RAND $DROPBOX
+  fi
+
+  ## Replace 'oldPicture.jpg'
+  cp $WORKDIR/$RAND $WORKDIR/$OLDP
+  rm $WORKDIR/$RAND
+
+  ## sleep...
+  sleep $TIME
+done

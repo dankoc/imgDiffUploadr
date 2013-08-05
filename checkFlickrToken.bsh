@@ -1,2 +1,2 @@
-TOK=`cat ~/.flickrrc/token`
+TOK=`cat ~/.flickrrc`
 flickr_upload --auth_token $TOK --check
