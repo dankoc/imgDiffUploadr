@@ -1,3 +1,4 @@
+!#/usr/bin/bash
 WORKDIR=/home/dankoc/Pictures
 OLDP=oldPicture.jpeg
 PUZDIF=/home/dankoc/Downloads/libpuzzle-0.11/src/puzzle-diff
