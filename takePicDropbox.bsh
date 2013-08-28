@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 WORKDIR=~/Pictures
 DROPBOX=~/Dropbox/Return
 OLDP=oldPicture.jpeg
